@@ -12,7 +12,7 @@ export interface routeInterface {
 export const routesConfig: routeInterface[] = [
   {
     path: '/',
-    component: lazy(() => import('../pages/index')),
+    component: lazy(() => import('../template/index')),
     key: 'Index',
     title: '首页',
     routes: [
@@ -21,7 +21,19 @@ export const routesConfig: routeInterface[] = [
         key: 'Home',
         title: '首页',
         component: lazy(() => import('../pages/home'))
+      },
+      {
+        path: '/user',
+        key: 'User',
+        title: '用户管理',
+        component: lazy(() => import('../pages/user'))
       }
     ]
+  },
+  {
+    path: '/login',
+    component: lazy(() => import('../template/login')),
+    title: '登录页',
+    key: 'Login'
   }
 ];
